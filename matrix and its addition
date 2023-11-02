@@ -1,0 +1,23 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+int main() {
+   printf("first matrix\n");
+    int arr[3][3]={1,2,3,4,5,6,7,8,9};
+    for(int i=0;i<3;i++)
+    {for(int j=0;j<3;j++)
+    {printf("%d ",arr[i][j]);}
+    printf("\n");}
+    printf("second matrix\n");
+    int ary[3][3]={9,8,7,6,5,4,3,2,1};
+    for(int i=0;i<3;i++)
+    {for(int j=0;j<3;j++)
+    {printf("%d ",ary[i][j]);}
+    printf("\n");}
+for(int i=0;i<3;i++)
+{for(int j=0;j<3;j++)
+{int sr=arr[i][j]+ary[i][j];
+printf("%d ",sr);}
+printf("\n");
+}
+    return 0;
+}
