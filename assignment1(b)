@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+   int divi,rem;
+   printf("enter a number to be divided by 4\n");
+   scanf("%d",& divi);
+   rem=divi%4;
+   switch(rem)
+   {case 0:
+   printf("the remainder is 0");
+break;
+       case 1:
+   printf("the remainder is 1");
+   break;
+case 2:
+   printf("the remainder is 2");
+break;
+   case 3:
+   printf("the remainder is 3"); 
+break;
+   }
+    return 0;
+}
