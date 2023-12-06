@@ -1,26 +1,63 @@
-#include<stdio.h>
-int main()
-{
-int a[3][3],b[3][3],c[3][3],r,i,j,k;
-int m=3,n=3,p=3,q=3;
-for(i=0;i<3;i++)
-{
+#include <stdio.h>
 
-    for(j=0;j<3;j++)
-    {
-        a[i][j]=(i+1)+(j+1);
-        b[i][j]=(i+1)+ (j+1);
-       
-
+int cofactor(int mat[3][3], int i, int j) 
+{
+  int sub[2][2];
+  int r = 0, c = 0;
+  for (int m = 0; m < 3; m++) {
+    for (int n = 0; n < 3; n++) {
+      if (m != i && n != j) {
+        sub[r][c] = mat[m][n];
+        c++;
+        if (c == 2) {
+          c = 0;
+          r++;
+        }
+      }
     }
+  }
+ 
+  return ((sub[0][0] * sub[1][1]) - (sub[0][1] * sub[1][0])) * (int)pow(-1, i + j);
 }
-for (i=0;i<3;i++)
-{
-    for(j=0;j<3;j++)
-    {
-       c[i][j]=a[(j+1)%3][(i+1)%3]*a[(j+2)%3][(i+2)%3]-a[(j+1)%3][(i+2)%3]*a[(j+2)%3][(i+1)%3];
-       printf("%d",c[i][j]);
-    }
 
+void adjoint(int mat[3][3], int adj[3][3]) {
+  
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      adj[i][j] = cofactor(mat, i, j);
+    }
+  }
+ 
+  for (int i = 0; i < 3; i++) {
+    for (int j = i + 1; j < 3; j++) {
+      int temp = adj[i][j];
+      adj[i][j] = adj[j][i];
+      adj[j][i] = temp;
+    }
+  }
+}
+
+int main() 
+{
+  int mat[3][3];
+  
+  int adj[3][3];
+  
+  printf("Enter the elements of the 3x3 matrix:\n");
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      scanf("%d", &mat[i][j]);
+    }
+  }
+  
+  adjoint(mat, adj);
+  
+  printf("The adjoint of the matrix is:\n");
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      printf("%d\t", adj[i][j]);
+    }
     printf("\n");
+  }
+  return 0;
 }
