@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    struct eceA
+    {
+        int roll_num;
+        char name[100];
+        char gender;
+    };
+
+    struct eceA satyam,shreyas,rewant,raghav,saket;
+
+    strcpy(satyam.name,"satyam");
+    satyam.roll_num=27;
+    satyam.gender='M';
+    printf("Name:%s\n",satyam.name); 
+    printf("Roll Number:%d\n",satyam.roll_num);
+    printf("Gender:%c\n",satyam.gender);
+    printf("\n");
+
+     strcpy(shreyas.name,"shreyas");
+    shreyas.roll_num=52;
+    shreyas.gender='M';
+    printf("Name:%s\n",shreyas.name); 
+    printf("Roll Number:%d\n",shreyas.roll_num);
+    printf("Gender:%c\n",shreyas.gender);
+    printf("\n");
+
+
+strcpy(satyam.name,"rewant");
+    rewant.roll_num=9;
+    rewant.gender='M';
+    printf("Name:%s\n",rewant.name); 
+    printf("Roll Number:%d\n",rewant.roll_num);
+    printf("Gender:%c\n",rewant.gender);
+    printf("\n");    return 0;
+
+    
+strcpy(raghav.name,"raghav");
+    raghav.roll_num=5;
+    raghav.gender='M';
+    printf("Name:%s\n",raghav.name); 
+    printf("Roll Number:%d\n",raghav.roll_num);
+    printf("Gender:%c\n",raghav.gender);
+    printf("\n");
+strcpy(saket.name,"Saket Maurya");
+    saket.roll_num=25;
+    saket.gender='M';
+    printf("Name:%s\n",saket.name);
+    printf("Roll Number:%d\n",saket.roll_num);
+    printf("Gender:%c\n",saket.gender); 
+    printf("\n");}
