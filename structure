@@ -28,7 +28,7 @@ int main()
     printf("\n");
 
 
-strcpy(satyam.name,"rewant");
+strcpy(rewant.name,"rewant");
     rewant.roll_num=9;
     rewant.gender='M';
     printf("Name:%s\n",rewant.name); 
